@@ -1,17 +1,3 @@
-(function () {
-    let total = 11 * 3600 + 47 * 60 + 23;
-    let hEl = document.getElementById('h'), mEl = document.getElementById('m'), sEl = document.getElementById('s'), ftEl = document.getElementById('final-timer');
-    function pad(n) { return String(n).padStart(2, '0'); }
-    function tick() {
-        if (total <= 0) { return; }
-        total--;
-        let h = Math.floor(total / 3600), m = Math.floor((total % 3600) / 60), s = total % 60;
-        hEl.textContent = pad(h); mEl.textContent = pad(m); sEl.textContent = pad(s);
-        if (ftEl) ftEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s) + ' remaining';
-    }
-    setInterval(tick, 1000); tick();
-}) ();
-
 function toggleFaq(btn) {
     let item = btn.parentElement;
     let isOpen = item.classList.contains('open');
